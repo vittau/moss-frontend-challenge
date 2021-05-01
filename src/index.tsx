@@ -1,11 +1,8 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
 import AppRouter from './AppRouter';
-
-// You need bootstrap? $ yarn add bootstrap
-// See: https://create-react-app.dev/docs/adding-bootstrap
-// import 'bootstrap/dist/css/bootstrap.css';
+import './index.scss';
 
 // Single-page application (SPA)
 ReactDOM.render(<AppRouter />, document.getElementById('root'));
