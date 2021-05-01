@@ -1,18 +1,18 @@
 // src/App.test.tsx
-import React from 'react'
-import { shallow } from 'enzyme'
-import App from './App'
+import React from 'react';
+import { shallow } from 'enzyme';
+import App from './App';
 
 describe('<App />', () => {
-  let component
+  let component;
 
   beforeEach(() => {
-    component = shallow(<App />)
-  })
+    component = shallow(<App />);
+  });
   test('It should mount', () => {
-    expect(component.length).toBe(1)
-  })
-})
+    expect(component.length).toBe(1);
+  });
+});
 
 /*
 Update this file once it's changed.  For instance to check if a component you added
