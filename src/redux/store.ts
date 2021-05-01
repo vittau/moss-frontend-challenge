@@ -1,11 +1,12 @@
-// src/redux/store.ts
-
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
+import iTunes from './ducks/itunes';
 
 const store = configureStore({
   reducer: combineReducers({
-    // your reducers goes here
+    iTunes,
   }),
-})
+  middleware: [thunk],
+});
 
-export default store
+export default store;
