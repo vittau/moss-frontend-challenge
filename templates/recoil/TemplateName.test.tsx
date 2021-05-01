@@ -5,19 +5,23 @@ License: MIT License
 Component: src/component/TemplateName/TemplateName.test.tsx
 */
 
-import React from 'react'
-import { shallow } from 'enzyme'
-import { RecoilRoot } from 'recoil'
-import TemplateName from './TemplateName'
+import { shallow } from 'enzyme';
+import React from 'react';
+import { RecoilRoot } from 'recoil';
+import TemplateName from './TemplateName';
 
 describe('<TemplateName />', () => {
-  let component
+  let component;
 
   beforeEach(() => {
-    component = shallow(<RecoilRoot><TemplateName /></RecoilRoot>)
-  })
+    component = shallow(
+      <RecoilRoot>
+        <TemplateName />
+      </RecoilRoot>
+    );
+  });
 
   test('It should mount', () => {
-    expect(component.length).toBe(1)
-  })
-})
+    expect(component.length).toBe(1);
+  });
+});

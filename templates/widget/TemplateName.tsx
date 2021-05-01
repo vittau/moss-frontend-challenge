@@ -5,16 +5,16 @@ License: MIT License
 Component: src/widgets/TemplateName/TemplateName.tsx
 */
 
-import React, { useEffect } from 'react'
-import './TemplateName.scss'
 // import { useRecoilValue } from 'recoil'
-import Grid from '@material-ui/core/Grid'
+import Grid from '@material-ui/core/Grid';
+import React, { useEffect } from 'react';
+import './TemplateName.scss';
 
 const TemplateName = (props: ITemplateNameProps) => {
-  const data: [] = [] /* useRecoilValue(getData) as [] */
+  const data: [] = []; /* useRecoilValue(getData) as [] */
   useEffect(() => {
     // TODO
-  })
+  });
   return (
     <>
       {data ? (
@@ -35,10 +35,10 @@ const TemplateName = (props: ITemplateNameProps) => {
         <>Loading</>
       )}
     </>
-  )
-}
-export default TemplateName
+  );
+};
+export default TemplateName;
 
 interface ITemplateNameProps {
-  smallBreakPoint: boolean
+  smallBreakPoint: boolean;
 }

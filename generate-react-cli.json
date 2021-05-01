@@ -71,9 +71,9 @@
       "withStory": false,
       "withLazy": false
     },
-    "materialui": {
+    "bootstrap": {
       "customTemplates": {
-        "component": "templates/materialui/TemplateName.tsx",
+        "component": "templates/bootstrap/TemplateName.tsx",
         "style": "templates/component/TemplateName.scss",
         "test": "templates/component/TemplateName.test.tsx"
       },

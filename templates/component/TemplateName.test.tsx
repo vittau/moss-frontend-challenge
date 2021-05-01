@@ -5,18 +5,18 @@ License: MIT License
 Component: src/component/TemplateName/TemplateName.test.tsx
 */
 
-import React from 'react'
-import { shallow } from 'enzyme'
-import TemplateName from './TemplateName'
+import { shallow } from 'enzyme';
+import React from 'react';
+import TemplateName from './TemplateName';
 
 describe('<TemplateName />', () => {
-  let component
+  let component;
 
   beforeEach(() => {
-    component = shallow(<TemplateName />)
+    component = shallow(<TemplateName />);
   });
 
   test('It should mount', () => {
-    expect(component.length).toBe(1)
-  })
-})
+    expect(component.length).toBe(1);
+  });
+});
