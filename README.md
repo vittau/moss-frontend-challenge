@@ -1,8 +1,50 @@
+<img src=".public/moss-logo-green.png" alt="moss-logo" width="200" align="right">
+
 # Moss.Earth frontend challenge
 
 This is my implementation for the Moss.Earth frontend challenge. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and the Must-Have Libraries (MHL) template.
 
-Below is the original description:
+## Installing
+
+The installation procedure is as usual:
+
+```bash
+$ yarn install
+```
+
+To run the local server:
+
+```bash
+$ yarn start
+```
+
+Now head to `localhost:3000` in your web browser to see the results.
+
+## Tests
+
+To run the component unit tests (Enzyme):
+
+```bash
+$ yarn test
+```
+
+To run the E2E tests (Puppeteer) in headless mode:
+
+```bash
+$ yarn test:e2e
+```
+
+### Frameworks/Libraries
+
+The major frameworks and libraries used were:
+
+- Typescript
+- React Bootstrap/Bootstrap
+- FontAwesome
+- ESLint + Prettier
+- Jest + Enzyme + Puppeteer
+
+Below is the original description of the challenge:
 
 # Front End Challenge
 
