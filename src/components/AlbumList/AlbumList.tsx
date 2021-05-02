@@ -1,9 +1,10 @@
 import React, { ChangeEvent, useState } from 'react';
-import { Badge, Col, Image, Row, Table } from 'react-bootstrap';
+import { Col, Image, Row, Table } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { ITunes } from '../../model/iTunes';
 import { toSearchableText } from '../../utils/string';
 import FilterInput from '../FilterInput/FilterInput';
+import GenreBadge from '../GenreBadge/GenreBadge';
 import './AlbumList.scss';
 
 export default function AlbumList({ data }: IAlbumListProp) {
@@ -63,9 +64,7 @@ export default function AlbumList({ data }: IAlbumListProp) {
                       <p className="font-weight-bold mb-0">{e.name}</p>
                       <small>by {e.artist}</small>
                       <br />
-                      <Badge variant="info" className="mb-2">
-                        {e.genre}
-                      </Badge>
+                      <GenreBadge genre={e.genre} />
                     </td>
                   </tr>
                 ))}

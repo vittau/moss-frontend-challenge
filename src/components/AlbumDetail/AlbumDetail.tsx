@@ -2,9 +2,10 @@ import { faApple } from '@fortawesome/free-brands-svg-icons';
 import { faArrowLeft, faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Badge, Button, Card, Col, Row } from 'react-bootstrap';
+import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ITunes } from '../../model/iTunes';
+import GenreBadge from '../GenreBadge/GenreBadge';
 import './AlbumDetail.scss';
 
 export default function AlbumDetail({ data }: IAlbumDetailProp) {
@@ -21,9 +22,7 @@ export default function AlbumDetail({ data }: IAlbumDetailProp) {
           </Link>
           <Card.Img variant="top" src={image.replace('170x170bb.png', '1000x1000bb.jpg')} />
           <Card.Body>
-            <Badge variant="info" className="mb-2">
-              {genre}
-            </Badge>
+            <GenreBadge genre={genre} />
             <Card.Title className="mb-2">{name}</Card.Title>
             <Card.Subtitle className="mb-2">by {artist}</Card.Subtitle>
             <Card.Text>
