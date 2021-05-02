@@ -1,12 +1,14 @@
 import React, { ChangeEvent, useState } from 'react';
 import { Col, Image, Row, Table } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { ITunes } from '../../model/iTunes';
 import { toSearchableText } from '../../utils/string';
 import FilterInput from '../FilterInput/FilterInput';
 import './AlbumList.scss';
 
 export default function AlbumList({ data }: IAlbumListProp) {
+  const history = useHistory();
+
   const [currentFilteredData, setCurrentFilteredData] = useState(data);
 
   const isEmpty = currentFilteredData && currentFilteredData.length === 0;
@@ -36,7 +38,7 @@ export default function AlbumList({ data }: IAlbumListProp) {
       ) : (
         <Row>
           <Col>
-            <Table responsive striped size="sm" width="100%" borderless>
+            <Table responsive striped width="100%" borderless hover>
               <thead>
                 <tr>
                   <th>#</th>
@@ -46,18 +48,13 @@ export default function AlbumList({ data }: IAlbumListProp) {
               </thead>
               <tbody>
                 {currentFilteredData.map((e, index) => (
-                  <tr key={e.rank}>
+                  <tr key={e.rank} onClick={() => history.push(`/album/${e.rank}`)} style={{ cursor: 'pointer' }}>
                     <td className="align-middle">{e.rank}</td>
                     <td className="align-middle">
-                      <Link to={`/album/${e.rank}`}>
-                        <Image src={e.image.replace('170x170bb.png', '100x100bb.jpg')} rounded style={{ maxHeight: '5rem', width: 'auto' }} />
-                      </Link>
+                      <Image src={e.image.replace('170x170bb.png', '100x100bb.jpg')} rounded style={{ maxHeight: '5rem', width: 'auto' }} />
                     </td>
                     <td className="align-middle">
-                      <Link className="text-light font-weight-bold" to={`/album/${e.rank}`}>
-                        {e.name}
-                      </Link>
-                      <br />
+                      <p className="font-weight-bold mb-0">{e.name}</p>
                       <small>by {e.artist}</small>
                     </td>
                   </tr>
