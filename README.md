@@ -1,5 +1,7 @@
 <img src="https://github.com/vittau/moss-frontend-challenge/raw/main/public/moss-green-logo.png" alt="moss-logo" width="200" align="right">
 
+[![Build Status](https://travis-ci.com/vittau/moss-frontend-challenge.svg?branch=main)](https://travis-ci.com/vittau/moss-frontend-challenge)
+
 # Moss.Earth frontend challenge
 
 This is my implementation for the Moss.Earth frontend challenge. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and the Must-Have Libraries (MHL) template.
@@ -43,6 +45,8 @@ The major frameworks and libraries used were:
 - FontAwesome
 - ESLint + Prettier
 - Jest + Enzyme + Puppeteer
+
+---
 
 Below is the original description of the challenge:
 
