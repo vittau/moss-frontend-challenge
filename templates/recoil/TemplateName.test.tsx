@@ -1,10 +1,3 @@
-/*
-Author: Eli Elad Elrom
-Website: https://EliElrom.com
-License: MIT License
-Component: src/component/TemplateName/TemplateName.test.tsx
-*/
-
 import { shallow } from 'enzyme';
 import React from 'react';
 import { RecoilRoot } from 'recoil';

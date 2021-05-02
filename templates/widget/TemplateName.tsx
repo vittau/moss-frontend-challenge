@@ -1,10 +1,3 @@
-/*
-Author: Eli Elad Elrom
-Website: https://EliElrom.com
-License: MIT License
-Component: src/widgets/TemplateName/TemplateName.tsx
-*/
-
 // import { useRecoilValue } from 'recoil'
 import Grid from '@material-ui/core/Grid';
 import React, { useEffect } from 'react';

@@ -9,12 +9,12 @@ import './HomePage.scss';
 const HomePage = (props: RouteComponentProps) => {
   const [feed, error] = useTopAlbums();
 
-  if (feed) {
-    return <AlbumList data={feed} />;
-  }
-
   if (error) {
     return <ErrorToast />;
+  }
+
+  if (feed) {
+    return <AlbumList data={feed} />;
   }
 
   return <LoadingIndicator />;
