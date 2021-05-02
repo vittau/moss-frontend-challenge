@@ -1,16 +1,17 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import NavBar from '../../components/NavBar/NavBar';
+import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import PageTitle from '../../components/PageTitle/PageTitle';
 import './NavbarLayout.scss';
 
 const NavbarLayout = ({ children }: IAlbumsProp) => (
   <>
-    <NavBar title="Top 100 Albums" />
-    <Container className="d-flex justify-content-center" style={{ paddingTop: '1rem' }}>
-      <Row>
-        <Col>{children}</Col>
-      </Row>
-    </Container>
+    <div className="text-center">
+      <Link to="/">
+        <PageTitle />
+      </Link>
+    </div>
+    <Container style={{ paddingTop: '1rem' }}>{children}</Container>
   </>
 );
 
