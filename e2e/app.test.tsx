@@ -17,7 +17,7 @@ describe('<App />', () => {
     'should include the filter with a placeholder text',
     async () => {
       const filterPlaceholder = await page.evaluate(() => document.querySelector('input[placeholder]')?.getAttribute('placeholder'));
-      expect(filterPlaceholder).toMatch('Filter by album or artist name');
+      expect(filterPlaceholder).toMatch('Filter by album, artist name or genre');
     },
     JEST_TIMEOUT
   );

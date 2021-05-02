@@ -12,7 +12,7 @@ export default function FilterInput({ onChange }: IFilterInputProp) {
           <FontAwesomeIcon icon={faFilter} />
         </InputGroup.Text>
       </InputGroup.Prepend>
-      <FormControl placeholder="Filter by album or artist name" aria-label="Filter" aria-describedby="basic-addon1" onChange={onChange} />
+      <FormControl placeholder="Filter by album, artist name or genre" aria-label="Filter" aria-describedby="basic-addon1" onChange={onChange} />
     </InputGroup>
   );
 }

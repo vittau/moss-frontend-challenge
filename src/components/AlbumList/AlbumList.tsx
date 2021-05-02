@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from 'react';
-import { Col, Image, Row, Table } from 'react-bootstrap';
+import { Badge, Col, Image, Row, Table } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { ITunes } from '../../model/iTunes';
 import { toSearchableText } from '../../utils/string';
@@ -17,7 +17,13 @@ export default function AlbumList({ data }: IAlbumListProp) {
     const searchTerm = toSearchableText(event.target.value);
 
     if (searchTerm && searchTerm.length > 0) {
-      setCurrentFilteredData(data.filter((album) => toSearchableText(album.name).includes(searchTerm) || toSearchableText(album.artist).includes(searchTerm)));
+      setCurrentFilteredData(
+        data.filter((album) => {
+          const { name, artist, genre } = album;
+          const searchableTerms = [toSearchableText(name), toSearchableText(artist), toSearchableText(genre)];
+          return searchableTerms.find((term) => term.includes(searchTerm));
+        })
+      );
     } else {
       setCurrentFilteredData(data);
     }
@@ -53,9 +59,13 @@ export default function AlbumList({ data }: IAlbumListProp) {
                     <td className="align-middle">
                       <Image src={e.image.replace('170x170bb.png', '100x100bb.jpg')} rounded style={{ maxHeight: '5rem', width: 'auto' }} />
                     </td>
-                    <td className="align-middle">
+                    <td className="align-middle" style={{ width: '100%' }}>
                       <p className="font-weight-bold mb-0">{e.name}</p>
                       <small>by {e.artist}</small>
+                      <br />
+                      <Badge variant="info" className="mb-2">
+                        {e.genre}
+                      </Badge>
                     </td>
                   </tr>
                 ))}
