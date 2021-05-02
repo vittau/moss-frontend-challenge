@@ -1,10 +1,10 @@
+import axios from 'axios';
 import { DateTime } from 'luxon';
 import { ThunkAction } from 'redux-thunk';
 import { ITunes } from '../../model/iTunes';
-import { Entry } from '../../model/iTunesResponse';
-import mockAlbums from './mockAlbums.json';
+import { Entry, ITunesResponse } from '../../model/iTunesResponse';
 
-// const ITUNES_TOP100_ALBUMS_ENDPOINT = 'https://itunes.apple.com/us/rss/topalbums/limit=100/json';
+const ITUNES_TOP100_ALBUMS_ENDPOINT = 'https://itunes.apple.com/us/rss/topalbums/limit=100/json';
 
 // Action Types
 
@@ -52,8 +52,8 @@ export function fetchAlbums(): ITunesThunk {
   return async (dispatch) => {
     dispatch({ type: Types.ALBUMS_TOP100_FETCH_START });
     try {
-      // const { data } = await axios.get<ITunesResponse>(ITUNES_TOP100_ALBUMS_ENDPOINT);
-      const data = mockAlbums;
+      const { data } = await axios.get<ITunesResponse>(ITUNES_TOP100_ALBUMS_ENDPOINT);
+      // const data = mockAlbums;
       const processed = mapITunesResponseEntriesToITunes(data.feed.entry);
 
       dispatch({ type: Types.ALBUMS_TOP100_FETCH_SUCCESS, payload: processed });
