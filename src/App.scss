@@ -22,6 +22,14 @@ $input-group-addon-color: darken($light, 50%);
 $input-group-addon-bg: lighten($body-bg, 3%);
 $input-group-addon-border-color: lighten($body-bg, 10%);
 
+$toast-color: $light;
+$toast-background-color: lighten($body-bg, 3%);
+$toast-border-color: lighten($body-bg, 3%);
+$toast-box-shadow: 0 0 0.3rem 0rem darken($body-bg, 5%);
+
+$toast-header-color: $light;
+$toast-header-background-color: lighten($body-bg, 3%);
+
 $font-size-base: 0.8rem;
 
 @import '~bootstrap/scss/bootstrap';
