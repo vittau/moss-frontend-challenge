@@ -1,4 +1,4 @@
-<img src=".public/moss-logo-green.png" alt="moss-logo" width="200" align="right">
+<img src="https://github.com/vittau/moss-frontend-challenge/raw/main/public/moss-green-logo.png" alt="moss-logo" width="200" align="right">
 
 # Moss.Earth frontend challenge
 
