@@ -12,7 +12,7 @@ export default function AlbumDetail({ data }: IAlbumDetailProp) {
   return (
     <Row className="AlbumDetail">
       <Col className="d-flex justify-content-center">
-        <Card text="light" style={{ maxWidth: '20rem' }} className="card-background">
+        <Card text="light" style={{ maxWidth: '20rem' }} className="card-background mb-4">
           <Link to="/" className="text-dark">
             <span className="fa-layers fa-fw" style={{ position: 'absolute', top: '1.25em', left: '1.25em' }}>
               <FontAwesomeIcon icon={faCircle} transform="grow-20" />
