@@ -8,7 +8,7 @@ import { ITunes } from '../../model/iTunes';
 import './AlbumDetail.scss';
 
 export default function AlbumDetail({ data }: IAlbumDetailProp) {
-  const { name, price, artist, genre, image, releaseDate, link } = data;
+  const { name, artist, genre, image, releaseDate, link } = data;
   return (
     <Row className="AlbumDetail">
       <Col className="d-flex justify-content-center">

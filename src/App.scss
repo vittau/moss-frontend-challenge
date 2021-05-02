@@ -2,6 +2,7 @@ $primary: #fa2d48;
 $info: #f4d35e;
 $dark: #1f1f1f;
 $light: rgba(255, 255, 255, 0.85);
+$text-muted: darken($light, 50%);
 
 $body-bg: $dark;
 $body-color: $light;
@@ -15,7 +16,7 @@ $table-border-color: darken($body-color, 70%);
 $input-bg: $body-bg;
 $input-focus-box-shadow: 0 0 0.3rem 0rem lighten($body-bg, 20%);
 $input-focus-border-color: darken($light, 50%);
-$input-color: darken($light, 50%);
+$input-color: $light;
 $input-border-color: lighten($body-bg, 10%);
 
 $input-group-addon-color: darken($light, 50%);
