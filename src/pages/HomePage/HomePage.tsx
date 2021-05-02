@@ -1,15 +1,16 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 import { RouteComponentProps } from 'react-router-dom';
+import AlbumList from '../../components/AlbumList/AlbumList';
 import { useTopAlbums } from '../../hooks/useTopAlbums';
-import Albums from '../../layout/Albums/Albums';
 import './HomePage.scss';
 
 const HomePage = (props: RouteComponentProps) => {
   const feed = useTopAlbums();
 
   if (feed) {
-    return <Albums data={feed} />;
+    return <AlbumList data={feed} />;
   }
-  return null;
+  return <Spinner animation="grow" />;
 };
 export default HomePage;

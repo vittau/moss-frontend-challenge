@@ -1,9 +1,10 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
+import { Image, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { ITunes } from '../../model/iTunes';
 import './AlbumList.scss';
 
-const headers = ['Artist', 'Album'];
+const headers = ['Cover', 'Album'];
 
 export default function AlbumList({ data }: IAlbumListProp) {
   return (
@@ -19,9 +20,15 @@ export default function AlbumList({ data }: IAlbumListProp) {
       <tbody>
         {data.map((e, index) => (
           <tr key={index}>
-            <td>{index + 1}</td>
-            <td>{e.artist}</td>
-            <td>{e.name}</td>
+            <td className="align-middle">{index + 1}</td>
+            <td className="align-middle">
+              <Image src={e.image} thumbnail style={{ maxHeight: 100, width: 'auto' }} />
+            </td>
+            <td className="align-middle">
+              <Link to={`/album/${index + 1}`}>{e.name}</Link>
+              <br />
+              <small>by {e.artist}</small>
+            </td>
           </tr>
         ))}
       </tbody>

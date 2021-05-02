@@ -7,13 +7,13 @@ Component: src/component/Albums/Albums.test.tsx
 
 import { shallow } from 'enzyme';
 import React from 'react';
-import Albums from './Albums';
+import NavbarLayout from './NavbarLayout';
 
 describe('<Albums />', () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<Albums />);
+    component = shallow(<NavbarLayout />);
   });
 
   test('It should mount', () => {
