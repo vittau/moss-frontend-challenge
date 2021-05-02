@@ -64,13 +64,16 @@ export function fetchAlbums(): ITunesThunk {
 }
 
 const mapITunesResponseEntriesToITunes = (entry: Entry[]): ITunes[] =>
-  entry.map((e) => {
+  entry.map((e, index) => {
     const {
       'im:artist': { label: artist },
       'im:name': { label: name },
       'im:image': imageArray,
       'im:price': { label: price },
       'im:releaseDate': { label: releaseDateStr },
+      link: {
+        attributes: { href: link },
+      },
       category: {
         attributes: { label: genre },
       },
@@ -79,11 +82,13 @@ const mapITunesResponseEntriesToITunes = (entry: Entry[]): ITunes[] =>
     const imageURL = imageArray[imageArray.length - 1].label;
 
     return {
+      rank: index + 1,
       artist,
       name,
       image: imageURL,
       price,
       releaseDate: DateTime.fromISO(releaseDateStr).toLocaleString(),
       genre,
+      link,
     };
   });
