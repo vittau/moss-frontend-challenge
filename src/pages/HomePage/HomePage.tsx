@@ -1,16 +1,22 @@
 import React from 'react';
-import { Spinner } from 'react-bootstrap';
 import { RouteComponentProps } from 'react-router-dom';
 import AlbumList from '../../components/AlbumList/AlbumList';
+import ErrorToast from '../../components/ErrorToast/ErrorToast';
+import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
 import { useTopAlbums } from '../../hooks/useTopAlbums';
 import './HomePage.scss';
 
 const HomePage = (props: RouteComponentProps) => {
-  const feed = useTopAlbums();
+  const [feed, error] = useTopAlbums();
 
   if (feed) {
     return <AlbumList data={feed} />;
   }
-  return <Spinner animation="grow" />;
+
+  if (error) {
+    return <ErrorToast />;
+  }
+
+  return <LoadingIndicator />;
 };
 export default HomePage;
