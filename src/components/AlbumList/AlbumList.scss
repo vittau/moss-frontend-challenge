@@ -1,4 +1,7 @@
 .AlbumList {
+  .album-row {
+    cursor: pointer;
+  }
   .album-rank {
     min-width: 3rem;
   }

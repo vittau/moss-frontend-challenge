@@ -23,10 +23,7 @@ export default function AlbumDetail({ data }: IAlbumDetailProp) {
             <Card.Subtitle className="mb-2">by {artist}</Card.Subtitle>
             <Card.Text>
               <small>Released on: {releaseDate}</small>
-              <Button className="mt-4" href={link} target="_blank" variant="primary" size="lg" block>
-                Open in <FontAwesomeIcon icon={faApple} />
-                Music
-              </Button>
+              <AppleMusicButton url={link} />
             </Card.Text>
           </Card.Body>
         </Card>
@@ -34,6 +31,13 @@ export default function AlbumDetail({ data }: IAlbumDetailProp) {
     </Row>
   );
 }
+
+const AppleMusicButton = ({ url }: { url: string }) => (
+  <Button className="mt-4" href={url} target="_blank" variant="primary" size="lg" block>
+    Open in <FontAwesomeIcon icon={faApple} />
+    Music
+  </Button>
+);
 
 interface IAlbumDetailProp {
   data: ITunes;

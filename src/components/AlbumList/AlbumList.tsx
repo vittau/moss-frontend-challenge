@@ -1,9 +1,9 @@
-import React, { ChangeEvent, useState } from 'react';
+import React from 'react';
 import { Col, Image, Row, Table } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import { useFilter } from '../../hooks/useFilter';
 import { ITunes } from '../../model/iTunes';
 import { thumbnailTransform } from '../../utils/images';
-import { toSearchableText } from '../../utils/string';
 import FilterInput from '../FilterInput/FilterInput';
 import GenreBadge from '../GenreBadge/GenreBadge';
 import './AlbumList.scss';
@@ -12,29 +12,11 @@ export default function AlbumList({ data }: IAlbumListProp) {
   // Used for navigation
   const history = useHistory();
 
-  // Holds the currently filtered data
-  const [currentFilteredData, setCurrentFilteredData] = useState(data);
+  // Hook that controls the filtering state
+  const [currentFilteredData, filterHandler] = useFilter(data);
 
   // Determines whether the list is empty or not
   const isEmpty = currentFilteredData && currentFilteredData.length === 0;
-
-  // Handler function for the filtering input
-  const filterHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    const searchTerm = toSearchableText(event.target.value ?? '');
-
-    // Filters albums by album, artist or genre
-    const filterFunction = (album: ITunes) => {
-      const { name, artist, genre } = album;
-      const searchableTerms = [toSearchableText(name), toSearchableText(artist), toSearchableText(genre)];
-      return searchableTerms.find((term) => term.includes(searchTerm));
-    };
-
-    if (searchTerm.length > 0) {
-      setCurrentFilteredData(data.filter(filterFunction));
-    } else {
-      setCurrentFilteredData(data);
-    }
-  };
 
   return (
     <div className="AlbumList">
@@ -83,12 +65,12 @@ const EmptyResults = () => (
 );
 
 const TableDataRow = ({ album, onClick }: { album: ITunes; onClick: () => void }) => (
-  <tr onClick={onClick} style={{ cursor: 'pointer' }}>
+  <tr onClick={onClick} className="album-row">
     <td className="align-middle album-rank">{album.rank}</td>
     <td className="align-middle">
       <Image src={thumbnailTransform({ imageURL: album.image, size: 100 })} rounded className="album-image" />
     </td>
-    <td className="align-middle" style={{ width: '100%' }}>
+    <td className="align-middle w-100">
       <AlbumInfo album={album} />
     </td>
   </tr>
