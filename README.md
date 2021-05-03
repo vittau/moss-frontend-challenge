@@ -1,10 +1,22 @@
-<img src="https://github.com/vittau/moss-frontend-challenge/raw/main/public/moss-green-logo.png" alt="moss-logo" width="200" align="right">
+<p align="center">
+  <img src="https://github.com/vittau/moss-frontend-challenge/raw/main/public/moss-green-logo.png" alt="moss-logo" width="200">
+</p>
 
-[![Build Status](https://travis-ci.com/vittau/moss-frontend-challenge.svg?branch=main)](https://travis-ci.com/vittau/moss-frontend-challenge)
+<p align="center">
+<b>Moss.Earth frontend challenge</b>
+</p>
 
-# Moss.Earth frontend challenge
+<p align="center">
+  <a href="https://travis-ci.com/vittau/moss-frontend-challenge">
+    <img alt="TravisCI Build Status" src="https://travis-ci.com/vittau/moss-frontend-challenge.svg?branch=main">
+  </a>
+</p>
 
-This is my implementation for the Moss.Earth frontend challenge. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and the Must-Have Libraries (MHL) template.
+---
+
+## **The page is currently available at [moss.vitormach.dev](https://moss.vitormach.dev), hosted on [Netlify](https://www.netlify.com/).**
+
+This is my implementation of the Moss.Earth frontend challenge. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and the Must-Have Libraries (MHL) template.
 
 ## Installing
 
