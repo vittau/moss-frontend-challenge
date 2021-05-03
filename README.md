@@ -7,6 +7,7 @@
 </p>
 
 <p align="center">
+  Travis CI build status<br/>
   <a href="https://travis-ci.com/vittau/moss-frontend-challenge">
     <img alt="TravisCI Build Status" src="https://travis-ci.com/vittau/moss-frontend-challenge.svg?branch=main">
   </a>
