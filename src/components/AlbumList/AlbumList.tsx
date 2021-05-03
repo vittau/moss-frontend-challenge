@@ -37,7 +37,7 @@ export default function AlbumList({ data }: IAlbumListProp) {
   };
 
   return (
-    <div>
+    <div className="AlbumList">
       <Row>
         <Col>
           <FilterInput onChange={filterHandler} />
@@ -45,34 +45,15 @@ export default function AlbumList({ data }: IAlbumListProp) {
       </Row>
 
       {isEmpty ? (
-        <Row>
-          <Col className="text-muted">There were no results for your search query...</Col>
-        </Row>
+        <EmptyResults />
       ) : (
         <Row>
           <Col>
-            <Table responsive striped width="100%" borderless hover>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Cover</th>
-                  <th>Album</th>
-                </tr>
-              </thead>
+            <Table responsive striped borderless hover>
+              <TableHeader />
               <tbody>
-                {currentFilteredData.map((e, index) => (
-                  <tr key={e.rank} onClick={() => history.push(`/album/${e.rank}`)} style={{ cursor: 'pointer' }}>
-                    <td className="align-middle">{e.rank}</td>
-                    <td className="align-middle">
-                      <Image src={thumbnailTransform({ imageURL: e.image, size: 100 })} rounded style={{ maxHeight: '5rem', width: 'auto' }} />
-                    </td>
-                    <td className="align-middle" style={{ width: '100%' }}>
-                      <p className="font-weight-bold mb-0">{e.name}</p>
-                      <small>by {e.artist}</small>
-                      <br />
-                      <GenreBadge genre={e.genre} />
-                    </td>
-                  </tr>
+                {currentFilteredData.map((album) => (
+                  <TableDataRow key={album.rank} album={album} onClick={() => history.push(`/album/${album.rank}`)} />
                 ))}
               </tbody>
             </Table>
@@ -82,6 +63,45 @@ export default function AlbumList({ data }: IAlbumListProp) {
     </div>
   );
 }
+
+const TableHeader = () => (
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Cover</th>
+      <th>Album</th>
+    </tr>
+  </thead>
+);
+
+const EmptyResults = () => (
+  <Row>
+    <Col>
+      <p className="text-muted">There were no results for your search query...</p>
+    </Col>
+  </Row>
+);
+
+const TableDataRow = ({ album, onClick }: { album: ITunes; onClick: () => void }) => (
+  <tr onClick={onClick} style={{ cursor: 'pointer' }}>
+    <td className="align-middle album-rank">{album.rank}</td>
+    <td className="align-middle">
+      <Image src={thumbnailTransform({ imageURL: album.image, size: 100 })} rounded className="album-image" />
+    </td>
+    <td className="align-middle" style={{ width: '100%' }}>
+      <AlbumInfo album={album} />
+    </td>
+  </tr>
+);
+
+const AlbumInfo = ({ album }: { album: ITunes }) => (
+  <>
+    <p className="font-weight-bold mb-0">{album.name}</p>
+    <small>by {album.artist}</small>
+    <br />
+    <GenreBadge genre={album.genre} />
+  </>
+);
 
 interface IAlbumListProp {
   data: ITunes[];
