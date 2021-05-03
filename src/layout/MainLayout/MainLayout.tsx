@@ -1,22 +1,19 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import PageTitle from '../../components/PageTitle/PageTitle';
-import './NavbarLayout.scss';
+import './MainLayout.scss';
 
-const NavbarLayout = ({ children }: IAlbumsProp) => (
+const MainLayout = ({ children }: IAlbumsProp) => (
   <>
     <div className="text-center">
-      <Link to="/">
-        <PageTitle />
-      </Link>
+      <PageTitle />
     </div>
     <Container style={{ paddingTop: '1rem' }}>{children}</Container>
   </>
 );
 
 interface IAlbumsProp {
-  children: JSX.Element;
+  children: ReactNode;
 }
 
-export default NavbarLayout;
+export default MainLayout;

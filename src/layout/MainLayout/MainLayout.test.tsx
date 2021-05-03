@@ -1,12 +1,12 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import NavbarLayout from './NavbarLayout';
+import MainLayout from './MainLayout';
 
 describe('<Albums />', () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<NavbarLayout />);
+    component = shallow(<MainLayout>test</MainLayout>);
   });
 
   test('It should mount', () => {

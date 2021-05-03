@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import './App.scss';
-import NavbarLayout from './layout/NavbarLayout/NavbarLayout';
+import MainLayout from './layout/MainLayout/MainLayout';
 import AlbumPage from './pages/AlbumPage/AlbumPage';
 import HomePage from './pages/HomePage/HomePage';
 import store from './redux/store';
@@ -22,7 +22,7 @@ const ITunesApp = () => {
   const location = useLocation();
 
   return (
-    <NavbarLayout>
+    <MainLayout>
       <SwitchTransition>
         <CSSTransition key={location.key} classNames="my-fade" timeout={300}>
           <Switch location={location}>
@@ -34,7 +34,7 @@ const ITunesApp = () => {
           </Switch>
         </CSSTransition>
       </SwitchTransition>
-    </NavbarLayout>
+    </MainLayout>
   );
 };
 
