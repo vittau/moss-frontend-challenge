@@ -1,11 +1,11 @@
 import React from 'react';
 import { Col, Image, Row, Table } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import FilterInput from '../../components/FilterInput/FilterInput';
+import GenreBadge from '../../components/GenreBadge/GenreBadge';
 import { useFilter } from '../../hooks/useFilter';
 import { ITunes } from '../../model/iTunes';
 import { thumbnailTransform } from '../../utils/images';
-import FilterInput from '../FilterInput/FilterInput';
-import GenreBadge from '../GenreBadge/GenreBadge';
 import './AlbumList.scss';
 
 export default function AlbumList({ data }: IAlbumListProp) {

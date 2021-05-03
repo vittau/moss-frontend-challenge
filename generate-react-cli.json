@@ -46,6 +46,18 @@
       "withTest": true,
       "withStory": false,
       "withLazy": false
+    },
+    "feature": {
+      "customTemplates": {
+        "component": "templates/bootstrap/TemplateName.tsx",
+        "style": "templates/component/TemplateName.scss",
+        "test": "templates/component/TemplateName.test.tsx"
+      },
+      "path": "src/features",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": false
     }
   }
 }

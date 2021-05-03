@@ -2,10 +2,10 @@ import { faApple } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
+import BackButton from '../../components/BackButton/BackButton';
+import GenreBadge from '../../components/GenreBadge/GenreBadge';
 import { ITunes } from '../../model/iTunes';
 import { thumbnailTransform } from '../../utils/images';
-import BackButton from '../BackButton/BackButton';
-import GenreBadge from '../GenreBadge/GenreBadge';
 import './AlbumDetail.scss';
 
 export default function AlbumDetail({ data }: IAlbumDetailProp) {

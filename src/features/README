@@ -1,0 +1,3 @@
+Feature components goes here, you can generate with generate-react-cli, examples;
+$ npx generate-react-cli component MyCustomList --type=feature
+$ npx generate-react-cli component MyCustomDashboard --type=feature
