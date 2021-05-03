@@ -5,6 +5,7 @@ import React from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ITunes } from '../../model/iTunes';
+import { thumbnailTransform } from '../../utils/images';
 import GenreBadge from '../GenreBadge/GenreBadge';
 import './AlbumDetail.scss';
 
@@ -20,7 +21,7 @@ export default function AlbumDetail({ data }: IAlbumDetailProp) {
               <FontAwesomeIcon icon={faArrowLeft} inverse transform="grow-8" />
             </span>
           </Link>
-          <Card.Img variant="top" src={image.replace('170x170bb.png', '1000x1000bb.jpg')} />
+          <Card.Img variant="top" src={thumbnailTransform({ imageURL: image, size: 1000 })} />
           <Card.Body>
             <GenreBadge genre={genre} />
             <Card.Title className="mb-2">{name}</Card.Title>
