@@ -24,7 +24,7 @@ const ITunesApp = () => {
   return (
     <MainLayout>
       <SwitchTransition>
-        <CSSTransition key={location.key} classNames="my-fade" timeout={300}>
+        <CSSTransition key={location.key ?? 'initial'} classNames="my-fade" timeout={300}>
           <Switch location={location}>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/album/:index" component={AlbumPage} />
