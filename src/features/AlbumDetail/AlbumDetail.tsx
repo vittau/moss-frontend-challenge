@@ -6,10 +6,11 @@ import BackButton from '../../components/BackButton/BackButton';
 import GenreBadge from '../../components/GenreBadge/GenreBadge';
 import { ITunes } from '../../model/iTunes';
 import { thumbnailTransform } from '../../utils/images';
+import { nth } from '../../utils/string';
 import './AlbumDetail.scss';
 
 export default function AlbumDetail({ data }: IAlbumDetailProp) {
-  const { name, artist, genre, image, releaseDate, link } = data;
+  const { artist, genre, image, link, name, rank, releaseDate } = data;
 
   return (
     <Row className="AlbumDetail">
@@ -22,6 +23,8 @@ export default function AlbumDetail({ data }: IAlbumDetailProp) {
             <Card.Title className="mb-2">{name}</Card.Title>
             <Card.Subtitle className="mb-2">by {artist}</Card.Subtitle>
             <Card.Text>
+              <small>Currently ranked on the {`${rank}${nth(rank)}`} place</small>
+              <br />
               <small>Released on: {releaseDate}</small>
               <AppleMusicButton url={link} />
             </Card.Text>
