@@ -2,7 +2,6 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { FormControl, InputGroup } from 'react-bootstrap';
-import './FilterInput.scss';
 
 export default function FilterInput({ onChange }: IFilterInputProp) {
   return (

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppRouter from './AppRouter';
+import App from './App';
 import './index.scss';
 
 // Single-page application (SPA)
-ReactDOM.render(<AppRouter />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want to Pre-render with react-snap
 // Step 1: install $ yarn add --dev react-snap

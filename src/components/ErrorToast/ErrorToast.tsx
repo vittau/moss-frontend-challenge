@@ -1,6 +1,5 @@
 import React from 'react';
 import { Col, Row, Toast } from 'react-bootstrap';
-import './ErrorToast.scss';
 
 export default function ErrorToast() {
   return (

@@ -1,12 +1,12 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import FilterInputt from './FilterInput';
+import FilterInput from './FilterInput';
 
 describe('<FilterInputt />', () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<FilterInputt />);
+    component = shallow(<FilterInput onChange={() => null} />);
   });
 
   test('It should mount', () => {

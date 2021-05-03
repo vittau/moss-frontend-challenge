@@ -1,6 +1,5 @@
 import React from 'react';
 import { Col, Row, Spinner } from 'react-bootstrap';
-import './LoadingIndicator.scss';
 
 export default function LoadingIndicator() {
   return (
