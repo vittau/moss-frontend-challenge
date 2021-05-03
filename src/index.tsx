@@ -1,5 +1,3 @@
-import 'react-app-polyfill/ie11'; // Must be on top
-import 'react-app-polyfill/stable'; // Must be in second place
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
