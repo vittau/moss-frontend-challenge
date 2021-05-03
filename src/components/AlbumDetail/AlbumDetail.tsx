@@ -1,11 +1,10 @@
 import { faApple } from '@fortawesome/free-brands-svg-icons';
-import { faArrowLeft, faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { ITunes } from '../../model/iTunes';
 import { thumbnailTransform } from '../../utils/images';
+import BackButton from '../BackButton/BackButton';
 import GenreBadge from '../GenreBadge/GenreBadge';
 import './AlbumDetail.scss';
 
@@ -14,13 +13,8 @@ export default function AlbumDetail({ data }: IAlbumDetailProp) {
   return (
     <Row className="AlbumDetail">
       <Col className="d-flex justify-content-center">
-        <Card text="light" style={{ maxWidth: '20rem' }} className="card-background mb-4">
-          <Link to="/" className="text-dark">
-            <span className="fa-layers fa-fw" style={{ position: 'absolute', top: '1.25em', left: '1.25em' }}>
-              <FontAwesomeIcon icon={faCircle} transform="grow-20" />
-              <FontAwesomeIcon icon={faArrowLeft} inverse transform="grow-8" />
-            </span>
-          </Link>
+        <Card text="light" className="card card-background mb-4">
+          <BackButton to="/" className="card-back-button" />
           <Card.Img variant="top" src={thumbnailTransform({ imageURL: image, size: 1000 })} />
           <Card.Body>
             <GenreBadge genre={genre} />

@@ -2,4 +2,12 @@
   .card-background {
     background-color: #272727;
   }
+  .card {
+    max-width: 20rem;
+  }
+  .card-back-button {
+    position: absolute;
+    top: 1.25em;
+    left: 1.25em;
+  }
 }
